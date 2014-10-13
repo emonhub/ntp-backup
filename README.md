@@ -13,6 +13,6 @@ This script is intended to
 - 3) add an init script to "backup" current time & drift value at shutdown and by cron
 - 4) remove these ntp-backup setup files once installation is done
 - 5) get correct time from ntp servers
-- 6) backup the current clock data
+- 6) backup the current time to fake-hwclock
 
 See [Read-only time issues](http://openenergymonitor.org/emon/node/5877) discusion on OpenEnergyMonitor forum for more info
