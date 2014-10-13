@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Simple cron script - trigger the ntp-backup service to remount 
+# the read only file system in write mode momentarily to save the 
+# current system time and ntp drift value to file and then remount 
+# in read-only mode again. ( /etc/init.d/ntp-backup )
+
+sudo service ntp-backup restart

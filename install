@@ -1,0 +1,36 @@
+#!/bin/sh
+
+echo "Modifying ntpd and fake-hwclock for read-only"
+
+if [ -f ~/data/fake-hwclock.data ] ; then
+	{
+	echo "relocating fake-hwclock.data to original location"
+	sudo rm /etc/fake-hwclock.data
+	sudo mv ~/data/fake-hwclock.data /etc/fake-hwclock.data
+	}
+fi
+
+if [ ! -f /etc/cron.hourly/ntp-backup ] ; then
+	{
+	echo "installing ntp-backup's cron entry"
+	sudo mv ~/ntp-backup/ntp-backup.cron /etc/cron.hourly/ntp-backup
+	sudo sh -c 'sed -i -e "s/^/# /" /etc/cron.hourly/fake-hwclock'
+	}
+fi
+
+if [ ! -f /etc/init.d/ntp-backup ] ; then
+	{
+	echo "installing ntp-backup's init script"
+	sudo mv ~/ntp-backup/ntp-backup.init /etc/init.d/ntp-backup
+	sudo chmod +x /etc/init.d/ntp-backup
+	sudo update-rc.d ntp-backup defaults
+	}
+fi
+
+if [ -f ~/ntp-backup/install ] ; then
+	{
+	echo "removing ntp-backup's installation files"
+	sudo rmdir -r ~/ntp-backup
+	}
+fi
+ 
