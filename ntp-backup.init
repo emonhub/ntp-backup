@@ -41,7 +41,7 @@ case "${1:-}" in
 	fi
 
 	# remount read only
-	mount -o remount,ro /dev/mmcblk0p2  /
+	mount -t ext4 -o remount,ro /dev/mmcblk0p2  /
         ;;
 
   start)
