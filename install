@@ -30,7 +30,7 @@ fi
 if [ -f ~/ntp-backup/install ] ; then
 	{
 	echo "removing ntp-backup's installation files"
-	sudo rmdir -r ~/ntp-backup
+	sudo rm -r ~/ntp-backup
 	}
 fi
  
