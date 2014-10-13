@@ -34,7 +34,7 @@ if [ -f ~/ntp-backup/install ] ; then
 	}
 fi
 
-sudo service ntpd restart
+sudo service ntp restart
 sudo service ntp-backup restart
 
 
