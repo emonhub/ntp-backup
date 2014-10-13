@@ -28,7 +28,7 @@ case "${1:-}" in
 	dval=`ntpdc -c kerninfo | grep "pll frequency" | awk -F' ' '{print $3}'`
 
 	# remount as writable
-	mount -o remount,rw /dev/mmcblk0p2  /
+	mount -t ext4 -o remount,rw /dev/mmcblk0p2  /
 
 	# if drift value is not empty then save to file
 	if [ $dval ] ; then
