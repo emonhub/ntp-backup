@@ -25,7 +25,7 @@ case "${1:-}" in
 	dfile=/var/lib/ntp/ntp.drift
 
 	# Get current drift value from ntpd (will be if ntpd is not running)
-	dval=`ntpdc -c kerninfo 2> /dev/null | grep "pll frequency" | awk -F' ' '{print $3}' | >/dev/null 2>&1`
+	dval=`ntpdc -c kerninfo | grep "pll frequency" | awk -F' ' '{print $3}'`
 
 	# remount as writable
 	mount -o remount,rw /dev/mmcblk0p2  /
