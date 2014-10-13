@@ -35,7 +35,7 @@ if [ -f ~/ntp-backup/install ] ; then
 fi
 
 sudo service ntp restart
-sudo service ntp-backup restart
+sudo fake-hwclock
 
 
  
