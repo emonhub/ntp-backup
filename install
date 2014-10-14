@@ -22,7 +22,6 @@ if [ ! -f /etc/init.d/ntp-backup ] ; then
 	{
 	echo "installing ntp-backup's init script"
 	sudo mv ~/ntp-backup/ntp-backup.init /etc/init.d/ntp-backup
-	sudo chmod +x /etc/init.d/ntp-backup
 	sudo update-rc.d ntp-backup defaults
 	}
 fi
