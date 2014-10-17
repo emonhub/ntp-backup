@@ -3,9 +3,9 @@ ntp-backup
 
 Enables NTP and fake-hwclock to function on a Pi with a read-only file system
 
-From the home directory, run the following command in "read & write mode" (rpi-rw)
+Run the following command in "read & write mode" (rpi-rw)
 
-    git clone https://github.com/emonhub/ntp-backup.git && ~/ntp-backup/install
+    git clone https://github.com/emonhub/ntp-backup.git ~/ntp-backup && ~/ntp-backup/install
 
 This script is intended to
 - 1) move the fake-hwclock back to it's original location if used on OEM SD card image
